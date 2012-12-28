@@ -26,6 +26,9 @@ class FriendListView(TemplateView):
             self.social_auths = request.user.socialaccount_set.all()
         else:
             self.social_auths = request.user.social_auth.all()
+            
+        if provider is not None:
+            self.social_auths = self.social_auths.filter(provider__iexact=provider)   
                 
         self.social_friend_lists = []
 
