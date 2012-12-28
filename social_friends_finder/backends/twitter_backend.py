@@ -51,7 +51,7 @@ class TwitterFriendsProvider(BaseFriendsProvider):
 
     def fetch_friend_ids(self, user):
         """
-        fethces friend id's from twitter
+        fetches friend id's from twitter
 
         Return:
             collection of friend ids

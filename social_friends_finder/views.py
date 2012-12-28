@@ -42,7 +42,7 @@ class FriendListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         """
-        checks if there is SocialFrind model record for the user
+        checks if there is SocialFriend model record for the user
         if not attempt to create one
         if all fail, redirects to the next page
         """
