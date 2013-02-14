@@ -103,7 +103,7 @@ class SocialFriendsManager(models.Manager):
 class SocialFriendList(models.Model):
 
     user_social_auth = models.OneToOneField(UserSocialAuth, related_name="social_auth")
-    friend_ids = models.CommaSeparatedIntegerField(max_length=10000000, blank=True, help_text="friends ids separated by commas")
+    friend_ids = models.CommaSeparatedIntegerField(max_length=21845, blank=True, help_text="friends ids separated by commas")
 
     objects = SocialFriendsManager()
 
