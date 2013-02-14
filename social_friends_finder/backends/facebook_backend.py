@@ -43,7 +43,12 @@ class FacebookFriendsProvider(BaseFriendsProvider):
         Return:
             collection of friend ids
         """
-        friends = self.fetch_friends(user)
+        try:
+            friends = self.fetch_friends(user)
+        except facebook.GraphAPIError:
+            log.debug("Graph API Error")
+            return [] 
+                
         friend_ids = []
         for friend in friends['data']:
             friend_ids.append(friend['id'])
